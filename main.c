@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char *proverb = "All that gilsters ...";
+void setPointer(char **q)
+{
+     *q = proverb;
+}
+
 
 int main(int argc, char *argv[])
 {
-  int i = 100;
-  int *p = &i;
-  int **q = &p;
+  char *p = "zzz";
+  setPointer(&p);
+  printf("%s \n", p);
   
-  *p = 200;
-  printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
-  
-  **q = 300;
-  printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
   system("PAUSE");	
   return 0;
 }
